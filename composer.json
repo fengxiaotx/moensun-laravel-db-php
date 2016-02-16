@@ -1,0 +1,22 @@
+{
+    "name": "moensun/laravel-db",
+    "type": "library",
+    "description": "moensun-laravel-db-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bane.Shi",
+            "email": "fengxiaotx@163.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/database": "5.2.*"
+    },
+    "minimum-stability": "dev",
+    "autoload":{
+        "psr-4":{
+            "MoenSun\\MSLaravelDB\\":"src/MoenSun/MSLaravelDB/"
+        }
+    }
+}
