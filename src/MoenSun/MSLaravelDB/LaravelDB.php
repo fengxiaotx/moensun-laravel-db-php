@@ -49,4 +49,30 @@ class LaravelDB extends DB
     public static function delete($sql,$params=array()){
         return parent::delete($sql,$params);
     }
+
+
+
+    public static function updateFields($data){
+        $fields = [];
+        if(count($data)){
+            foreach($data as $k=>$v){
+                array_push($fields,$k."=:".$k);
+            }
+        }
+        return implode(",",$fields);
+    }
+
+    public static function insertFields($data){
+        $fields = [];
+        $values = [];
+        if(count($data)){
+            foreach($data as $k=>$v){
+                array_push($fields,$k);
+                array_push($values,":".$k);
+            }
+        }
+
+        return " (".implode(",",$fields).") values (".implode(",",$values).") ";
+    }
+
 }
